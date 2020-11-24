@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewData["Title"] = "Appraise";
+}
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Students4CheapTexts</title>
+    <link rel="stylesheet" href="~/css/students.css" type="text/css"/>
+</head>
+<body>
+    <center><h1>Appraise</h1></center>
+    <ul>
+        <li><a href="~/Home/Index">Home</a></li>
+        <li><a href="~/Home/Appraise">Appraise</a></li>
+    </ul>
+    <center>
+        <div>
+            <form action="~/Home/Appraise" method="POST">
+                <br/>
+                <label for="title">Textbook Title: </label>
+                <input type="text" id="title" name="title" placeholder="Please enter the name of your book...." /><br />
+
+                <label for="version">Textbook Version:  </label>
+                <input type="text" id="version" name="version" placeholder="Please enter the version....." /><br />
+
+                <label for="ISBN">Textbook ISBN: </label>
+                <input type="text" id="ISBN" name="ISBN" placeholder="Please enter the ISBN number....." /><br />
+
+                <label for="price">Purchase Price: </label>
+                <input type="text" id="price" name="price" placeholder="Please enter the price...." /><br />
+
+                <label for="condition">Condition: </label>
+
+                <select name="condition" id="condition">
+                    <option value="New">New</option>
+                    <option value="Good">Good</option>
+                    <option value="Bad">Bad</option>
+                </select><br />
+
+                <input type="submit" value="Appraise">
+
+            </form>
+        </div>
+        </center>
+</body>
+</html>
+
