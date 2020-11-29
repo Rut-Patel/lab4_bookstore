@@ -11,6 +11,7 @@ namespace lab4_bookstore.Controllers
 {
     public class HomeController : Controller
     {
+        static List<textbook> textList = new List<textbook>();
         public IActionResult Index()
         {
             return View();
@@ -31,6 +32,8 @@ namespace lab4_bookstore.Controllers
                 ViewData["Message"] = "Your textbook: " + model.title + " ,version: " + model.version;
                 ViewData["Appraise"] = "was appraised at: $" + model.appraisalPrice(model.price,model.condition);
 
+                textList.Add(new textbook(model.title, model.ISBN, model.version, model.price, model.condition));
+
                 return View("Appraised", model);
             }
             else
@@ -38,8 +41,12 @@ namespace lab4_bookstore.Controllers
                 //message = "Failed to appraise the price. Please try again.";
                 return View("Error");
             }
+        }
 
-           
+        public IActionResult TextDisplay()
+        {
+            
+            return View(textList);
         }
     }
 }

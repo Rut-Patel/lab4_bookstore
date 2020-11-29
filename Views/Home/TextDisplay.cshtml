@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "TextDisplay";
+}
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Students4CheapTexts Appraised Textbook</title>
+    <link rel="stylesheet" href="~/css/students.css" type="text/css" />
+
+</head>
+<body>
+    <h1>Appraised Textbook List</h1>
+    <ul>
+        <li><a href="~/Home/Index">Home</a></li>
+        <li><a href="~/Home/Appraise">Appraise Again</a></li>
+        <li><a href="~/Home/TextDisplay">View Textbook</a></li>
+    </ul>
+    <table width="80%" align="center" border="1">
+        <tr>
+            <th>Title</th>
+            <th>ISBN</th>
+            <th>Version</th>
+            <th>Price</th>
+            <th>Condition</th>
+            <th>Appraised Price</th>
+         </tr>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.title</td>
+                <td>@i.ISBN</td>
+                <td>@i.version</td>
+                <td>@i.price</td>
+                <td>@i.condition</td>
+                <td>@i.appraisalPrice(i.price, i.condition)</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
